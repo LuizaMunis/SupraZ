@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPRAZ — Análise Inteligente de Editais</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+  <nav class="nav">
+    <div class="container inner">
+      <div class="brand"><div class="logo"><img src="assets/logo.png" alt="SUPRA Z" loading="eager"></div><div class="name">SUPRA Z</div></div>
+      <div class="menu">
+        <a href="#recursos">Recursos</a>
+        <a href="#contexto">Contexto</a>
+        <a href="#objetivo">Objetivo</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#publico">Público-alvo</a>
+        <a href="#fechamento">Fechamento</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <div class="title">SUPRA Z</div>
+          <div class="supra">Análise Inteligente de Editais</div>
+          <div class="hero-cta">
+            <button class="btn primary" onclick="document.querySelector('#recursos').scrollIntoView({behavior:'smooth'})">Ver Recursos</button>
+            <button class="btn" onclick="document.querySelector('#contexto').scrollIntoView({behavior:'smooth'})">Ver Mensagem</button>
+          </div>
+
+          <div class="cards">
+            <div class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" stroke="#0b1220" stroke-width="2"/><path d="M21 21l-4.3-4.3" stroke="#0b1220" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Triagem Rápida</h3><p>Detecta PDFs, extrai texto e prepara o conteúdo.</p></div>
+            <div class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#0b1220" stroke-width="2"/><circle cx="12" cy="12" r="8" stroke="#0b1220" stroke-width="2"/></svg></div><h3>Pontuação</h3><p>Score 0 – 100 por critérios objetivos.</p></div>
+            <div class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4z" stroke="#0b1220" stroke-width="2"/><path d="M8 17V7M16 17V7" stroke="#0b1220" stroke-width="2"/></svg></div><h3>Notificações</h3><p>E-mail e Telegram no threshold.</p></div>
+          </div>
+        </div>
+        <div class="planet reveal"></div>
+      </div>
+    </div>
+    <div class="floating-img" aria-hidden="true"></div>
+  </header>
+
+  <div class="wave-wrap" aria-hidden="true">
+    <div class="spark-field"></div>
+    <svg class="wave-svg" viewBox="0 0 1600 220" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="waveGrad1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#fff7ed" stop-opacity="0"/>
+          <stop offset="12%" stop-color="#fed7aa" stop-opacity="0.9"/>
+          <stop offset="50%" stop-color="#fb923c" stop-opacity="1"/>
+          <stop offset="88%" stop-color="#fb923c" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="waveGlow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="3.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+
+      <g filter="url(#waveGlow)" fill="none" stroke="url(#waveGrad1)" stroke-linecap="round">
+        <path class="sine s1" d="M0,150 C120,90 240,210 360,150 S600,90 720,150 960,210 1080,150 1320,90 1440,150 1600,210 1600,210"/>
+        <path class="sine s2" d="M0,130 C140,70 280,190 420,130 S700,70 840,130 1120,190 1260,130 1500,70 1600,130"/>
+        <path class="sine s3" d="M0,170 C160,110 320,230 480,170 S800,110 960,170 1280,230 1440,170 1600,110 1600,110"/>
+      </g>
+      <!-- nós removidos para otimização e estética -->
+    </svg>
+  </div>
+
+  <section id="recursos">
+    <div class="container">
+      <h2>Recursos Principais</h2>
+      <p class="supra" style="margin:0">Supra Z é a inteligência que transforma editais complexos em uma simples resposta: GO ou NO-GO.</p>
+      <div class="cards cards4">
+        <div class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#0b1220" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Objeto</h3><p>Identifica em uma frase o que está sendo contratado.</p></div>
+        <div class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0b1220" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#0b1220" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Datas Críticas</h3><p>Prazo do certame e sessão de lances.</p></div>
+        <div class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#0b1220" stroke-width="2"/><path d="M7 12c0-3 2-5 5-5s5 2 5 5-2 5-5 5-5-2-5-5z" stroke="#0b1220" stroke-width="2"/></svg></div><h3>Impacto Social</h3><p>Justificativa, motivação e benefício ao cidadão.</p></div>
+        <div class="card reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 11l3 3 9-9" stroke="#0b1220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Habilitação Técnica</h3><p>Somatório de atestados (HST/UST/PF) com equivalências.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contexto">
+    <div class="container">
+      <h2>Contexto</h2>
+      <div class="theme">
+        <div class="impact">
+          <div class="phrase">Imagine gastar dias mergulhado em editais… e descobrir no final não são compativeis com nossos <span class="accent">valores e interesses?</span></div>
+        </div>
+        <div class="info">
+          <span class="connector"></span>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">01</div><h4>Leitura extensa de documentos</h4><p>Volume alto e heterogêneo de PDFs dificulta priorização.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">02</div><h4>Processo demorado e sujeito a erros</h4><p>Tempo de resposta impacta a decisão de GO/NO GO.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">03</div><h4>Perda de tempo em editais pouco relevantes</h4><p>Sem filtro objetivo, a energia se dispersa.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="objetivo">
+    <div class="container">
+      <h2>Objetivo</h2>
+      <div class="theme">
+        <div class="impact">
+          <div class="phrase">Automatizar para ganhar <span class="accent">velocidade</span> e <span class="accent">precisão</span>.</div>
+        </div>
+        <div class="info">
+          <span class="connector"></span>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">01</div><h4>Análise rápida e confiável</h4><p>Pipeline automático do upload à pontuação.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">02</div><h4>Pontuação mínima</h4><p>Threshold inteligente para filtrar oportunidades com objetividade e alinhar propostas aos princípios da empresa.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">03</div><h4>Foco no que importa</h4><p>Somente promissores seguem para análise humana.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="beneficios">
+    <div class="container">
+      <h2>Benefícios</h2>
+      <div class="theme">
+        <div class="impact">
+          <div class="phrase">Mais possibilidades avaliadas em menos tempo. Mais chances de transformar o mundo.</div>
+        </div>
+        <div class="info">
+          <span class="connector"></span>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">01</div><h4>Escala</h4><p>Capacidade de analisar mais editais em menos tempo</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">02</div><h4>Estratégia</h4><p>Mais chances de captar projetos prioritários.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">03</div><h4>Eficiência</h4><p>Economia de tempo e recursos.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">04</div><h4>Alinhamento</h4><p>Foco em editais coerentes com os valores da empresa.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publico">
+    <div class="container">
+      <h2>Público‑alvo</h2>
+      <div class="theme">
+        <div class="impact"><div class="phrase">Criado para quem não pode esperar para transformar o futuro.</div></div>
+        <div class="info">
+          <span class="connector"></span>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">01</div><h4>Gestores e analistas de inovação</h4><p>Dados claros para decisão rápida.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">02</div><h4>Prospecção e estratégia</h4><p>Filtro objetivo aumenta taxa de GO qualificados.</p></div>
+          <div class="info-item reveal"><div class="dot"></div><div class="num">03</div><h4>Stakeholders competitivos</h4><p>Transparência e métricas alinhadas ao impacto.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="fechamento">
+    <div class="container cta-wrap">
+      <div>
+        <div class="impact">
+          <div class="phrase">Tecnologia que conecta nossa empresa a oportunidades de mudar o mundo.</div>
+        </div>
+      </div>
+      <div><button class="cta" onclick="alert('Obrigado! Em um projeto real, este botão abriria um formulário ou e-mail.')">Finalizar</button></div>
+    </div>
+  </section>
+
+  <footer><div class="container">© 2025 SUPRA Z -  Equipe Troia</div></footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
