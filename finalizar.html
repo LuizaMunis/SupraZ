@@ -10,7 +10,7 @@
     body { background: #07111b; }
     .final-wrapper { position: relative; min-height: 100vh; display: grid; grid-template-columns: 1fr 1.6fr; }
     .final-left { position: relative; background: #000000; clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%); display: grid; place-items: center; row-gap: 18px; }
-    .brand-mark { display: grid; row-gap: 4px; color: #cfe9ff; justify-items: center; text-align: center; transform: translateX(-4vw); }
+    .brand-mark { display: grid; row-gap: 4px; color: #cfe9ff; justify-items: center; text-align: center; transform: none; }
     .brand-mark .logo { width: min(300px, 20vw); }
     .brand-mark .logo img { width: 100%; height: auto; display: block; }
     .subtitle { color: #cfe9ff; font-weight: 900; font-size: 12px; opacity: .9; letter-spacing: .02em; text-align: center; margin-bottom: 0; }
@@ -120,6 +120,7 @@
   </div>
 
   <script src="script.js"></script>
+  <div id="pageTransition" class="page-transition-overlay" aria-hidden="true"></div>
 </body>
 </html>
 

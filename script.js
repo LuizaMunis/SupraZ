@@ -201,6 +201,19 @@ document.addEventListener('DOMContentLoaded', function() {
   let finalTriggered = false;
   const finalizarBtn = document.getElementById('finalizarBtn');
   const thanks = document.getElementById('thanks');
+  const pageTransition = document.getElementById('pageTransition');
+  function navigateWithFade(url){
+    if (!pageTransition){ window.location.href = url; return; }
+    pageTransition.classList.add('show');
+    setTimeout(()=>{ window.location.href = url; }, 650);
+  }
+  // Fade-in ao chegar na página
+  if (pageTransition){
+    // começa oculto; se vier de navegação, remove após pequeno atraso
+    requestAnimationFrame(()=>{
+      pageTransition.classList.remove('show');
+    });
+  }
   if (finalizarBtn) {
     finalizarBtn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -208,12 +221,13 @@ document.addEventListener('DOMContentLoaded', function() {
       if (finalTriggered) return;
       finalTriggered = true;
       if (thanks) {
-        // Mostrar overlay local
+        // Mostrar overlay local e depois escurecer página inteira para ir para finalizar.html
         thanks.classList.remove('hidden');
         thanks.classList.add('show');
+        setTimeout(()=>{ navigateWithFade('finalizar.html'); }, 1400);
       } else {
-        // Ir para a página 3
-        window.location.href = 'finalizar.html';
+        // Ir para a página final com transição
+        navigateWithFade('finalizar.html');
       }
     });
   }
