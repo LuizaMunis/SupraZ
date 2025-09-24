@@ -191,26 +191,30 @@ document.addEventListener('DOMContentLoaded', function() {
       // after animation, hide overlay
       setTimeout(()=>{ 
         intro.classList.add('hidden'); 
-        // crossfade do conteúdo principal
-        document.body.classList.remove('page-prep');
-        document.body.classList.add('page-show');
+        // Após a animação, vamos para a página de conteúdo
+        window.location.href = 'conteudo.html';
       }, 2000);
     });
   }
 
-  // Reutilizar o efeito ao clicar em Finalizar e mostrar agradecimento
+  // Clique em Finalizar: se houver overlay (#thanks), mostra; senão, redireciona para a página final
   let finalTriggered = false;
   const finalizarBtn = document.getElementById('finalizarBtn');
   const thanks = document.getElementById('thanks');
-  if (finalizarBtn && thanks) {
+  if (finalizarBtn) {
     finalizarBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       if (finalTriggered) return;
       finalTriggered = true;
-      // Escurecer lentamente e mostrar o logo, sem efeitos extras
-      thanks.classList.remove('hidden');
-      thanks.classList.add('show');
+      if (thanks) {
+        // Mostrar overlay local
+        thanks.classList.remove('hidden');
+        thanks.classList.add('show');
+      } else {
+        // Ir para a página 3
+        window.location.href = 'finalizar.html';
+      }
     });
   }
   // Adicionar listeners para todos os cards
