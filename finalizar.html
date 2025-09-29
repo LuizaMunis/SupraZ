@@ -7,114 +7,65 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <style>
-    body { background: #07111b; }
-    .final-wrapper { position: relative; min-height: 100vh; display: grid; grid-template-columns: 1fr 1.6fr; }
-    .final-left { position: relative; background: #000000; clip-path: polygon(0 0, 75% 0, 100% 100%, 0 100%); display: grid; place-items: center; row-gap: 18px; }
-    .brand-mark { display: grid; row-gap: 4px; color: #cfe9ff; justify-items: center; text-align: center; transform: none; }
-    .brand-mark .logo { width: min(300px, 20vw); }
-    .brand-mark .logo img { width: 100%; height: auto; display: block; }
-    .subtitle { color: #cfe9ff; font-weight: 900; font-size: 12px; opacity: .9; letter-spacing: .02em; text-align: center; margin-bottom: 0; }
-    .phrase-container { margin-top: 0; }
-    .phrase-strong { color: #25e1da; font-weight: 900; letter-spacing: .06em; font-size: clamp(14px, 2.5vw, 20px); text-align: center; font-family: 'Lato', sans-serif; font-style: italic; line-height: 0.9; margin: 0; }
-
-    .final-right { position: relative; padding: min(5vw, 130px) min(6vw, 64px); display: grid; grid-template-rows: 1fr auto; }
-    .team-container { align-self: center; display: flex; flex-direction: column; align-items: center; gap: min(4vw, 36px); }
-    .team-row { display: flex; gap: min(6vw, 64px); justify-content: center; }
-    .team-row.top { justify-content: center; }
-    .team-row.bottom { justify-content: center; }
+    body { background: #000000; }
+    .end-page { min-height: 100vh; display: grid; place-items: center; padding: 6vh 4vw; }
+    .center { display: grid; justify-items: center; row-gap: clamp(10px, 2vw, 20px); text-align: center; }
+    .brand-logo { width: min(220px, 26vw); }
+    .brand-logo img { width: 100%; height: auto; display: block; }
+    .title { font-weight: 900; letter-spacing: .12em; font-size: clamp(32px, 6vw, 68px); background: linear-gradient(90deg, #22d3ee, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .subtitle { color: #ffffff; font-weight: 900; font-style: italic; letter-spacing: .04em; text-transform: uppercase; opacity: .92; font-size: clamp(12px, 2vw, 18px); line-height: 1.15; }
+    .avatars { margin-top: clamp(18px, 4vw, 42px); display: flex; gap: clamp(16px, 3.2vw, 42px); flex-wrap: wrap; align-items: flex-start; justify-content: center; }
     .member { text-align: center; color: #e6f0ff; font-weight: 800; }
-    .avatar { width: clamp(120px, 15vw, 150px); height: clamp(120px, 15vw, 150px); border-radius: 50%; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,.45); border: 3px solid rgba(255,255,255,.06); margin: 0 auto 8px; }
+    .avatar { width: clamp(110px, 14vw, 150px); height: clamp(110px, 14vw, 150px); border-radius: 50%; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,.5); border: 3px solid rgba(255,255,255,.08); margin: 0 auto 8px; }
     .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .member .name { margin-top: 3px; font-size: clamp(10px, 1.3vw, 14px); }
-
-    .thanks-big { align-self: end; font-size: clamp(24px, 4vw, 60px); font-weight: 900; letter-spacing: .02em; color: #ffffff; text-align: center; margin: 4vh 0 1vh; font-family: 'Lato', sans-serif; font-style: italic; }
-    .mascot { position: absolute; right: min(2.5vw, 24px); bottom: min(2vw, 18px); display: grid; justify-items: center; row-gap: 4px; }
-    .mascot img { width: clamp(32px, 5vw, 60px); height: auto; display: block; filter: drop-shadow(0 6px 16px rgba(0,0,0,.35)); }
-    .mascot .label { color: #e6f0ff; font-size: 10px; font-weight: 800; opacity: .9; }
-
-    @media (max-width: 1200px){
-      .final-wrapper { grid-template-columns: 1fr 1.4fr; }
-      .final-left { clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%); }
-      .brand-mark { transform: translateX(-2vw); }
-    }
-    
-    @media (max-width: 980px){
-      .final-wrapper { grid-template-columns: 1fr; }
-      .final-left { clip-path: none; padding: 36px 24px; }
-      .final-right { padding: 28px 24px 64px; }
-      .team-row { flex-direction: column; gap: min(3vw, 24px); }
-      .team-row.bottom { flex-direction: row; justify-content: center; }
-      .brand-mark { transform: none; }
-      .avatar { width: clamp(120px, 16vw, 160px); height: clamp(120px, 16vw, 160px); }
-    }
-    
-    @media (max-width: 768px){
-      .final-left { padding: 24px 16px; }
-      .final-right { padding: 20px 16px 48px; }
-      .team-row { gap: min(4vw, 32px); }
-      .team-row.bottom { gap: min(6vw, 48px); }
-      .avatar { width: clamp(100px, 14vw, 140px); height: clamp(100px, 14vw, 140px); }
-      .member .name { font-size: clamp(10px, 1.4vw, 14px); }
-      .thanks-big { font-size: clamp(24px, 4vw, 48px); margin: 4vh 0 1vh; }
-    }
-    
-    @media (max-width: 480px){
-      .final-left { padding: 20px 12px; }
-      .final-right { padding: 16px 12px 40px; }
-      .team-container { gap: min(3vw, 20px); }
-      .team-row { gap: min(3vw, 24px); }
-      .team-row.bottom { gap: min(4vw, 32px); }
-      .avatar { width: clamp(80px, 12vw, 120px); height: clamp(80px, 12vw, 120px); }
-      .member .name { font-size: clamp(9px, 1.2vw, 12px); }
-      .thanks-big { font-size: clamp(20px, 3.5vw, 36px); margin: 3vh 0 1vh; }
-      .mascot { right: min(2vw, 16px); bottom: min(2vw, 16px); }
-      .mascot img { width: clamp(32px, 5vw, 60px); }
-    }
+    .selo { position: fixed; top: 14px; left: 14px; display: grid; justify-items: center; row-gap: 2px; opacity: .28; pointer-events: none; }
+    .selo img { width: clamp(26px, 4vw, 40px); height: auto; display: block; filter: grayscale(1) drop-shadow(0 6px 16px rgba(0,0,0,.25)); }
+    .selo .label { color: rgba(207,233,255,.7); font-size: 10px; font-weight: 800; letter-spacing: .02em; }
+    /* Ondas mais próximas dos nomes nesta página */
+    .end-page .wave-wrap { position: relative; height: 120px; margin: clamp(8px, 1.8vw, 16px) 0 0; overflow: visible; z-index: 1; }
+    .end-page .wave-svg { position: absolute; left: 0; right: 0; top: -6px; width: 100%; height: 160px; pointer-events: none; }
   </style>
 </head>
 <body>
-  <div class="final-wrapper">
-    <div class="final-left">
-      <div class="brand-mark">
-        <div class="logo"><img src="assets/logofinal.png" alt="SUPRAZ"></div>
-        <div class="subtitle">Seu Agente Inteligente para análise de Editais</div>
-        <div class="phrase-container">
-          <div class="phrase-strong">TRANSFORMANDO INFORMAÇÕES EM</div>
-          <div class="phrase-strong">OPORTUNIDADES</div>
-        </div>
+  <div class="starfield" aria-hidden="true"></div>
+  <div class="end-page">
+    <div class="selo"><img src="assets/cavalo.png" alt="Equipe Tróia"><div class="label">Equipe Tróia</div></div>
+    <div class="center">
+      <div class="brand-logo"><img src="assets/logofinal.png" alt="SUPRAZ"></div>
+      <div class="subtitle">TRANSFORMANDO INFORMAÇÕES EM<br>OPORTUNIDADES</div>
+      <div class="avatars">
+        <div class="member"><div class="avatar"><img src="assets/Ailson.png" alt="Ailson Gonçalves"></div><div class="name">Ailson Gonçalves</div></div>
+        <div class="member"><div class="avatar"><img src="assets/Flavia.png" alt="Flávia Maria"></div><div class="name">Flávia Maria</div></div>
+        <div class="member"><div class="avatar"><img src="assets/Luiza.png" alt="Luiza Munis"></div><div class="name">Luiza Munis</div></div>
+        <div class="member"><div class="avatar"><img src="assets/Sara.png" alt="Sara Mesquita"></div><div class="name">Sara Mesquita</div></div>
+        <div class="member"><div class="avatar"><img src="assets/Bruno.png" alt="Bruno Menezes"></div><div class="name">Bruno Menezes</div></div>
       </div>
-    </div>
-    <div class="final-right">
-      <div class="team-container">
-        <div class="team-row top">
-          <div class="member">
-            <div class="avatar"><img src="assets/Ailson.png" alt="Ailson Gonçalves"></div>
-            <div class="name">Ailson Gonçalves</div>
-          </div>
-          <div class="member">
-            <div class="avatar"><img src="assets/Flavia.png" alt="Flávia Maria"></div>
-            <div class="name">Flávia Maria</div>
-          </div>
-          <div class="member">
-            <div class="avatar"><img src="assets/Luiza.png" alt="Luiza Munis"></div>
-            <div class="name">Luiza Munis</div>
-          </div>
-        </div>
-        <div class="team-row bottom">
-          <div class="member">
-            <div class="avatar"><img src="assets/Sara.png" alt="Sara Mesquita"></div>
-            <div class="name">Sara Mesquita</div>
-          </div>
-          <div class="member">
-            <div class="avatar"><img src="assets/Bruno.png" alt="Bruno Menezes"></div>
-            <div class="name">Bruno Menezes</div>
-          </div>
-        </div>
-      </div>
-      <div class="thanks-big">OBRIGADO!</div>
-      <div class="mascot">
-        <img src="assets/cavalo.png" alt="Equipe Tróia">
-        <div class="label">Equipe Tróia</div>
+      <div class="wave-wrap" aria-hidden="true">
+        <div class="spark-field"></div>
+        <svg class="wave-svg" viewBox="0 0 1600 220" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="waveGrad1" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#fff7ed" stop-opacity="0"/>
+              <stop offset="12%" stop-color="#fed7aa" stop-opacity="0.9"/>
+              <stop offset="50%" stop-color="#fb923c" stop-opacity="1"/>
+              <stop offset="88%" stop-color="#fb923c" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="waveGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <g filter="url(#waveGlow)" fill="none" stroke="url(#waveGrad1)" stroke-linecap="round">
+            <path class="sine s1" d="M0,150 C120,90 240,210 360,150 S600,90 720,150 960,210 1080,150 1320,90 1440,150 1600,210 1600,210"/>
+            <path class="sine s2" d="M0,130 C140,70 280,190 420,130 S700,70 840,130 1120,190 1260,130 1500,70 1600,130"/>
+            <path class="sine s3" d="M0,170 C160,110 320,230 480,170 S800,110 960,170 1280,230 1440,170 1600,110 1600,110"/>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
