@@ -186,17 +186,6 @@ section { padding: 72px 0; position: relative; }
 
 .planet { position: relative; height: 320px; border-radius: 16px; overflow: visible; background: transparent; border: none; }
 
-.floating-img {
-  position: absolute;
-  top: -50px;
-  right: 18%;
-  width: 360px;
-  height: 360px;
-  background: url('assets/image.png') center/contain no-repeat;
-  pointer-events: none;
-  z-index: 2;
-  filter: none;
-}
 
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
 .cards4 { grid-template-columns: repeat(4, 1fr); }
